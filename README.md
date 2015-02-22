@@ -1,4 +1,7 @@
 ##Course Project for Getting and Cleaning Data - Coursera
+
+This script starts with the assumption that the Samsung data is available in the working directory in an unzipped UCI HAR Dataset folder
+
 ```r
 ##Step 0: Load initial data
 
