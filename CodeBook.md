@@ -191,18 +191,18 @@ Finally, export the resulting data frame to a text file
 write.table(tidyData2, file="result.txt", row.names=FALSE)
 ```
 
-##Result (tidy) daat
+##Result (tidy) data
 
 As the result of the process above described, we obtained a data set of  68 variables for each activity and for each subject, with the following structure:
 
 * Subject: Each subject participating on the experiment
 * Activity: type of activity, 6 possible levels: 
---* WALKING
---* WALKING_UPSTAIRS
---* WALKING_DOWNSTAIRS
---* SITTING
---*STANDING
---*LAYING
+⋅⋅* WALKING
+⋅⋅* WALKING_UPSTAIRS
+⋅⋅* WALKING_DOWNSTAIRS
+⋅⋅* SITTING
+⋅⋅* STANDING
+⋅⋅* LAYING
 * timeBodyAccelerometer-mean()-X: Numeric
 * timeBodyAccelerometer-mean()-Y: Numeric
 * timeBodyAccelerometer-mean()-Z: Numeric
