@@ -1,5 +1,5 @@
 ##Course Project for Getting and Cleaning Data - Coursera
-```
+```r
 ##Step 0: Load initial data
 
 ##Now we can start with the data
