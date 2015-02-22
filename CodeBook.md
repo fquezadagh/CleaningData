@@ -121,7 +121,7 @@ Data<-cbind(Features,temporal)
 ###Step 3: Extracts only the measurements on the mean and standard deviation for each measurement
 
 
-To get this we have to create a factor by subsetting from FeaturesNames with "mean()" or "std()" on its name using grep()
+To get this we have to create a factor by subsetting from FeaturesNames with "mean()" or "std()" on its name using grep(), so we only keep the mean and standard deviation (std) values
 ```r
 WantedNames<-FeaturesNames$V2[grep("mean\\(\\)|std\\(\\)",FeaturesNames$V2)]
 ```
@@ -190,3 +190,84 @@ Finally, export the resulting data frame to a text file
 ```r
 write.table(tidyData2, file="result.txt", row.names=FALSE)
 ```
+
+##Result (tidy) daat
+
+As the result of the process above described, we obtained a data set of  68 variables for each activity and for each subject, with the following structure:
+
+* Subject: Each subject participating on the experiment
+* Activity: type of activity, 6 possible levels: 
+--* WALKING
+--* WALKING_UPSTAIRS
+--* WALKING_DOWNSTAIRS
+--* SITTING
+--*STANDING
+--*LAYING
+* timeBodyAccelerometer-mean()-X: Numeric
+* timeBodyAccelerometer-mean()-Y: Numeric
+* timeBodyAccelerometer-mean()-Z: Numeric
+* timeBodyAccelerometer-std()-X: Numeric
+* timeBodyAccelerometer-std()-Y: Numeric
+* timeBodyAccelerometer-std()-Z: Numeric
+* timeGravityAccelerometer-mean()-X: Numeric
+* timeGravityAccelerometer-mean()-Y: Numeric
+* timeGravityAccelerometer-mean()-Z: Numeric
+* timeGravityAccelerometer-std()-X: Numeric
+* timeGravityAccelerometer-std()-Y: Numeric
+* timeGravityAccelerometer-std()-Z: Numeric
+* timeBodyAccelerometerJerk-mean()-X: Numeric
+* timeBodyAccelerometerJerk-mean()-Y: Numeric
+* timeBodyAccelerometerJerk-mean()-Z: Numeric
+* timeBodyAccelerometerJerk-std()-X: Numeric
+* timeBodyAccelerometerJerk-std()-Y: Numeric
+* timeBodyAccelerometerJerk-std()-Z: Numeric
+* timeBodyGyroscope-mean()-X: Numeric
+* timeBodyGyroscope-mean()-Y: Numeric
+* timeBodyGyroscope-mean()-Z: Numeric
+* timeBodyGyroscope-std()-X: Numeric
+* timeBodyGyroscope-std()-Y: Numeric
+* timeBodyGyroscope-std()-Z: Numeric
+* timeBodyGyroscopeJerk-mean()-X: Numeric
+* timeBodyGyroscopeJerk-mean()-Y: Numeric
+* timeBodyGyroscopeJerk-mean()-Z: Numeric
+* timeBodyGyroscopeJerk-std()-X: Numeric
+* timeBodyGyroscopeJerk-std()-Y: Numeric
+* timeBodyGyroscopeJerk-std()-Z: Numeric
+* timeBodyAccelerometerMagnitude-mean(): Numeric
+* timeBodyAccelerometerMagnitude-std(): Numeric
+* timeGravityAccelerometerMagnitude-mean(): Numeric
+* timeGravityAccelerometerMagnitude-std(): Numeric
+* timeBodyAccelerometerJerkMagnitude-mean(): Numeric
+* timeBodyAccelerometerJerkMagnitude-std(): Numeric
+* timeBodyGyroscopeMagnitude-mean(): Numeric
+* timeBodyGyroscopeMagnitude-std(): Numeric
+* timeBodyGyroscopeJerkMagnitude-mean(): Numeric
+* timeBodyGyroscopeJerkMagnitude-std(): Numeric
+* frequencyBodyAccelerometer-mean()-X: Numeric
+* frequencyBodyAccelerometer-mean()-Y: Numeric
+* frequencyBodyAccelerometer-mean()-Z: Numeric
+* frequencyBodyAccelerometer-std()-X: Numeric
+* frequencyBodyAccelerometer-std()-Y: Numeric
+* frequencyBodyAccelerometer-std()-Z: Numeric
+* frequencyBodyAccelerometerJerk-mean()-X: Numeric
+* frequencyBodyAccelerometerJerk-mean()-Y: Numeric
+* frequencyBodyAccelerometerJerk-mean()-Z: Numeric
+* frequencyBodyAccelerometerJerk-std()-X: Numeric
+* frequencyBodyAccelerometerJerk-std()-Y: Numeric
+* frequencyBodyAccelerometerJerk-std()-Z: Numeric
+* frequencyBodyGyroscope-mean()-X: Numeric
+* frequencyBodyGyroscope-mean()-Y: Numeric
+* frequencyBodyGyroscope-mean()-Z: Numeric
+* frequencyBodyGyroscope-std()-X: Numeric
+* frequencyBodyGyroscope-std()-Y: Numeric
+* frequencyBodyGyroscope-std()-Z: Numeric
+* frequencyBodyAccelerometerMagnitude-mean(): Numeric
+* frequencyBodyAccelerometerMagnitude-std(): Numeric
+* frequencyBodyAccelerometerJerkMagnitude-mean(): Numeric
+* frequencyBodyAccelerometerJerkMagnitude-std(): Numeric
+* frequencyBodyGyroscopeMagnitude-mean(): Numeric
+* frequencyBodyGyroscopeMagnitude-std(): Numeric
+* frequencyBodyGyroscopeJerkMagnitude-mean(): Numeric
+* frequencyBodyGyroscopeJerkMagnitude-std(): Numeric
+ 
+As in the original data set we keep the variable names with -mean() at the end for mean values and std() for standard deviation values
