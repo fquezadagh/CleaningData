@@ -197,12 +197,12 @@ As the result of the process above described, we obtained a data set of  68 vari
 
 * Subject: Each subject participating on the experiment
 * Activity: type of activity, 6 possible levels: 
-⋅⋅* WALKING
-⋅⋅* WALKING_UPSTAIRS
-⋅⋅* WALKING_DOWNSTAIRS
-⋅⋅* SITTING
-⋅⋅* STANDING
-⋅⋅* LAYING
+  * WALKING
+  * WALKING_UPSTAIRS
+  * WALKING_DOWNSTAIRS
+  * SITTING
+  * STANDING
+  * LAYING
 * timeBodyAccelerometer-mean()-X: Numeric
 * timeBodyAccelerometer-mean()-Y: Numeric
 * timeBodyAccelerometer-mean()-Z: Numeric
