@@ -3,7 +3,9 @@
 ##Step 0: Load initial data
 
 ##Now we can start with the data
-##As David showed us at https://class.coursera.org/getdata-011/forum/thread?thread_id=181#comment-510, we have the
+##As David showed us at 
+##https://class.coursera.org/getdata-011/forum/thread?thread_id=181#comment-510, 
+##we have the following data hierarchy:
 ## "y_train.txt","y_test.txt": Values of activity
 ## "subject_train.txt","subject_test.txt": values of subject
 ## "X_train.txt","X_test.txt": Values of features 
@@ -48,15 +50,15 @@ Data<-cbind(Features,temporal)
 ##Step 2: Extracts only the measurements on the mean and standard deviation for each measurement
 
 
-##To get this we have to create a factor by subsetting from FeaturesNames with "mean()" or "std()" on its name using
-##grep()
+##To get this we have to create a factor by subsetting from FeaturesNames 
+##with "mean()" or "std()" on its name using grep()
 WantedNames<-FeaturesNames$V2[grep("mean\\(\\)|std\\(\\)",FeaturesNames$V2)]
 
 ##Now we create a character vector adding to the WantedNames the columns "Subject" and "Activity"
 WantedColumns<-c(as.character(WantedNames),"Subject","Activity")
 
-##Finally, subset Data by WantedColumns. I opted to keep Data on memory, but it could be removed if you don't have
-##enough memory
+##Finally, subset Data by WantedColumns. I opted to keep Data on memory, but it could be removed 
+##if you don't have enough memory
 tidyData<-subset(Data,select=WantedColumns)
 
 
@@ -76,8 +78,9 @@ levels(tidyData$Activity)<-ActivityLabels$V2
 ##Step 4: Appropriately labels the data set with descriptive variable names
 
 
-##If you check the names of the variables on the tidyData you'll see a lot of abbreviatures like t for time,
-##f for frequency and so on, so we need to change that names using the gsub() function based on the next criteria (refer to features_info.txt):
+##If you check the names of the variables on the tidyData you'll see a lot of abbreviatures
+##like t for time, f for frequency and so on, so we need to change that names 
+##using the gsub() function based on the next criteria (refer to features_info.txt):
 ##prefix t is replaced by time
 ##prefix f is replaced by frequency
 ##Acc is replaced by Accelerometer
@@ -92,7 +95,8 @@ names(tidyData)<-gsub("Mag", "Magnitude", names(tidyData))
 names(tidyData)<-gsub("BodyBody", "Body", names(tidyData))
 
 
-##Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
+##Step 5: From the data set in step 4, creates a second, independent tidy data 
+##set with the average of each variable for each activity and each subject
 
 
 ##We can use aggregate() to summarize the information and get the average of each variable
