@@ -3,7 +3,7 @@
 This script starts with the assumption that the Samsung data is available in the working directory in an unzipped UCI HAR Dataset folder
 
 ```r
-##Step 0: Load initial data
+##Step 1: Load initial data
 
 ##Now we can start with the data
 ##As David showed us at 
@@ -26,7 +26,7 @@ SubjectTrain<-read.table("UCI HAR Dataset/train/subject_train.txt",header=FALSE)
 FeaturesTrain<-read.table("UCI HAR Dataset/train/X_train.txt",header=FALSE)
 
 
-##Step 1: Merges the training and the test sets to create one data set (by rows = rbind)
+##Step 2: Merges the training and the test sets to create one data set (by rows = rbind)
 
 ##Merging data
 Activity<-rbind(ActivityTrain,ActivityTest)
@@ -50,7 +50,7 @@ temporal<-cbind(Subject,Activity)
 Data<-cbind(Features,temporal)
 
 
-##Step 2: Extracts only the measurements on the mean and standard deviation for each measurement
+##Step 3: Extracts only the measurements on the mean and standard deviation for each measurement
 
 
 ##To get this we have to create a factor by subsetting from FeaturesNames 
@@ -65,7 +65,7 @@ WantedColumns<-c(as.character(WantedNames),"Subject","Activity")
 tidyData<-subset(Data,select=WantedColumns)
 
 
-##Step 3: Uses descriptive activity names to name the activities in the data set
+##Step 4: Uses descriptive activity names to name the activities in the data set
 
 
 ##Getting activities labels from activity_labels.txt
@@ -78,7 +78,7 @@ tidyData$Activity<-as.factor(tidyData$Activity)
 levels(tidyData$Activity)<-ActivityLabels$V2
 
 
-##Step 4: Appropriately labels the data set with descriptive variable names
+##Step 5: Appropriately labels the data set with descriptive variable names
 
 
 ##If you check the names of the variables on the tidyData you'll see a lot of abbreviatures
@@ -98,7 +98,7 @@ names(tidyData)<-gsub("Mag", "Magnitude", names(tidyData))
 names(tidyData)<-gsub("BodyBody", "Body", names(tidyData))
 
 
-##Step 5: From the data set in step 4, creates a second, independent tidy data 
+##Step 6: From the data set in step 4, creates a second, independent tidy data 
 ##set with the average of each variable for each activity and each subject
 
 
