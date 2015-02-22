@@ -1,4 +1,4 @@
-Course Project for Getting and Cleaning Data - Coursera
+##Course Project for Getting and Cleaning Data - Coursera
 ```
 ##Step 0: Load initial data
 
